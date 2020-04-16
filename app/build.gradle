@@ -27,6 +27,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(path: ':instance-restore')
     implementation project(path: ':instance-restore-annotations')
-    annotationProcessor project(path: ':instance-restore-annotations-processor')
+    annotationProcessor project(path: ':instance-restore-compiler')
     implementation 'com.github.holleQiang:PermissionRequestHelper:1.0.0'
 }

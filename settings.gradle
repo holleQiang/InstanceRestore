@@ -1,1 +1,1 @@
-include ':app', ':instance-restore-annotations', ':instance-restore-annotations-processor', ':instance-restore'
+include ':app', ':instance-restore-annotations', ':instance-restore-compiler', ':instance-restore'
