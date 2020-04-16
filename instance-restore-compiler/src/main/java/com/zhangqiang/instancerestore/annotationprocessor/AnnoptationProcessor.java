@@ -111,8 +111,6 @@ public class AnnoptationProcessor extends AbstractProcessor {
 
             TypeMirror typeMirror = variableElement.asType();
 
-            System.out.println("===============" + typeMirror + "$$" + typeMirror.getClass());
-
             String fieldType = typeMirror.toString();
             String fieldName = instanceElement.getSimpleName().toString();
             String keyName;
@@ -183,7 +181,6 @@ public class AnnoptationProcessor extends AbstractProcessor {
 
                         codeBlockBuilder.add("bundle.putParcelableArrayList($S,target.$N);\n", keyName, fieldName);
                         handed = true;
-                        System.out.println("&&&&&&&&&&&&&&&");
                     } else if (isSerializable(declaredType)) {
                         codeBlockBuilder.add("bundle.putSerializable($S,target.$N);\n", keyName, fieldName);
                         handed = true;
@@ -222,8 +219,6 @@ public class AnnoptationProcessor extends AbstractProcessor {
             VariableElement variableElement = (VariableElement) instanceElement;
 
             TypeMirror typeMirror = variableElement.asType();
-
-            System.out.println("===============" + typeMirror + "$$" + typeMirror.getClass());
 
             String fieldType = typeMirror.toString();
             String fieldName = instanceElement.getSimpleName().toString();
@@ -295,7 +290,6 @@ public class AnnoptationProcessor extends AbstractProcessor {
 
                         codeBlockBuilder.add("target.$N=bundle.getParcelableArrayList($S);\n", fieldName, keyName);
                         handed = true;
-                        System.out.println("&&&&&&&&&&&&&&&");
                     } else if (isSerializable(declaredType)) {
                         Element element = declaredType.asElement();
                         if (element instanceof TypeElement) {
@@ -344,7 +338,6 @@ public class AnnoptationProcessor extends AbstractProcessor {
             TypeElement typeElement = (TypeElement) element;
             String typeName = typeElement.getQualifiedName().toString();
             if ("java.util.ArrayList".equals(typeName)) {
-                System.out.println("%%%%%%%%%%%%%" + typeElement.toString());
                 List<? extends TypeMirror> typeArguments = declaredType.getTypeArguments();
                 for (TypeMirror typeArgument : typeArguments) {
                     if (typeArgument instanceof DeclaredType) {
