@@ -87,7 +87,7 @@ public class AnnoptationProcessor extends AbstractProcessor {
                     .addModifiers(Modifier.PUBLIC, Modifier.STATIC)
                     .build();
 
-            TypeSpec typeSpec = TypeSpec.classBuilder("InstanceRestore_" + typeElement.getSimpleName())
+            TypeSpec typeSpec = TypeSpec.classBuilder( typeElement.getSimpleName()+"$InstanceRestore")
                     .addMethod(restoreInstanceMethod)
                     .addMethod(saveInstanceMethod)
                     .addModifiers(Modifier.PUBLIC)

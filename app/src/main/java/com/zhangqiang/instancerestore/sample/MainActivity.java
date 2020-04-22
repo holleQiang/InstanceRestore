@@ -2,18 +2,26 @@ package com.zhangqiang.instancerestore.sample;
 
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Size;
 import android.util.SizeF;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.EditText;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +29,7 @@ import com.zhangqiang.instancerestore.InstanceRestore;
 import com.zhangqiang.instancerestore.annotations.Instance;
 import com.zhangqiang.permissionrequest.PermissionRequestHelper;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -120,7 +129,14 @@ public class MainActivity extends BaseActivity {
 
         textView = (TextView) findViewById(R.id.tv_title);
         textView.setText(input);
+
+
+
+
+        startActivity(new Intent(this,Activity2.class));
     }
+
+
 
 
 }
